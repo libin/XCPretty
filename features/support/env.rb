@@ -1,9 +1,9 @@
 $:.unshift File.expand_path('../../..', __FILE__)
 
-require "tempfile"
-require "spec/fixtures/constants"
-require "spec/support/matchers/colors"
-require "lib/xcpretty/ansi"
+require 'tempfile'
+require 'spec/fixtures/constants'
+require 'spec/support/matchers/colors'
+require 'lib/xcpretty/ansi'
 
 include XCPretty::ANSI
 
@@ -17,7 +17,7 @@ FAILING_TEST_NAME_MATCHER = %r{\w+, expected:}
 def run_xcpretty flags
   add_run_input SAMPLE_OCUNIT_SUITE_COMPLETION
   add_run_input SAMPLE_EXECUTED_TESTS
-  input_file = Tempfile.new("xcpretty_input")
+  input_file = Tempfile.new('xcpretty_input')
   File.open(input_file.path, 'w') do |file|
     file.print run_input
   end
@@ -30,11 +30,11 @@ def add_run_input text
 end
 
 def run_input
-  @input ||= ""
+  @input ||= ''
 end
 
 def run_output
-  @output ||= ""
+  @output ||= ''
 end
 
 Before do
@@ -42,6 +42,6 @@ Before do
 end
 
 After do
-  @input  = ""
-  @output = ""
+  @input  = ''
+  @output = ''
 end
